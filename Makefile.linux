@@ -1,0 +1,18 @@
+NAME = libsmm
+CFLAGS = -std=c99 -O3 -march=native -ffast-math -fPIC
+LIBS = $(shell gsl-config --cflags --libs) -lm
+
+all: ${NAME}.so test
+
+test:   test.c smm.c smm.h
+	gcc ${CFLAGS} test.c smm.c -o test ${LIBS}
+
+
+${NAME}.so: smm.c smm.h
+	gcc ${CFLAGS} -shared -Wl,-soname,${NAME} -o ${NAME}.so smm.c ${LIBS}
+
+
+.PHONY: clean
+clean:
+	-rm ${NAME}.so smm.pyc
+
