@@ -14,4 +14,4 @@ ${NAME}.dylib: smm.c smm.h
 
 .PHONY: clean
 clean:
-	-rm ${NAME}.so smm.pyc
+	-rm -f ${NAME}.so smm.pyc
