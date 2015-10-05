@@ -17,7 +17,7 @@ k = (2 * np.pi)/7.5
 T = (2 * np.pi)/(c*k)
 randomshift = r.uniform() * T;
 
-print "Seed = ", seed, "RandomShift = ", randomshift
+print("Seed = ", seed, "RandomShift = ", randomshift)
 
 Nsensors = 200
 StreamFunction = 5 # Meandering Jet
@@ -35,11 +35,11 @@ for i in range(Nsensors):
 	x[i] = r.uniform() * 4
 	y[i] = r.uniform() * 4 - 2
 
-print "%.2f\t%.3f\t%.3f" % (0,min(x),max(x))
+print("%.2f\t%.3f\t%.3f" % (0,min(x),max(x)))
 
 for i in range(100):
 	MoveSensors(x,y)
-	print "%.2f\t%.2f\t%.2f" % ((i+1)*SimStep,min(x)*1000,max(x)*1000)
+	print("%.2f\t%.2f\t%.2f" % ((i+1)*SimStep,min(x)*1000,max(x)*1000))
 
 
 
